@@ -1,0 +1,391 @@
+DOCKER CONTAINERS ZOOMCAMP
+
+docker network create pg-network
+
+docker volume create --name dtc_postgres_volume_local -d local
+
+docker run -it \
+-e POSTGRES_USER="root" \
+-e POSTGRES_PASSWORD="root" \
+-e POSTGRES_DB="ny_taxi" \
+-v /workspaces/zoomcamp-2024-emi/dtc_postgres_volume_local:/var/lib/postgresql/data \
+-p 5432:5432 \
+--network=pg-network \
+--name pg-database \
+postgres:13
+
+docker run -it \
+-e PGADMIN_DEFAULT_EMAIL="admin@admin.com" \
+-e PGADMIN_DEFAULT_PASSWORD="root" \
+-p 8080:80 \
+--network=pg-network \
+--name pgadmin \
+dpage/pgadmin4
+
+pgcli -h localhost -p 5432 -u root -d ny_taxi
+
+
+python file_uploader.py \
+--user=root \
+--password=root \
+--host=localhost \
+--port=5432 \
+--db=ny_taxi \
+--table=green_taxi_trips \
+--csv_path='../landing/' \
+--csv_url='https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-02.csv.gz' \
+--csv_name='green_tripdata_2019-02.csv'
+
+
+docker run -it \
+--network=pg-network \
+taxi_ingest:v001 \
+--user=root \
+--password=root \
+--host=pg-database \
+--port=5432 \
+--db=ny_taxi \
+--table=green_taxi_trips \
+--csv_path='../landing/' \
+--csv_url='https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-02.csv.gz' \
+--csv_name='green_tripdata_2019-02.csv'
+
+
+docker run -it \
+--network=pg-network \
+taxi_ingest:v001 \
+--user=root \
+--password=root \
+--host=pg-database \
+--port=5432 \
+--db=ny_taxi \
+--table=green_taxi_trips \
+--csv_path='landing/' \
+--csv_url='https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-01.csv.gz' \
+--csv_name='green_tripdata_2019-01.csv'
+
+
+docker-compose up -d
+
+docker-compose down
+
+
+docker run -it \
+--network=pg-network \
+taxi_ingest:v001 \
+--user=root \
+--password=root \
+--host=pg-database \
+--port=5432 \
+--db=ny_taxi \
+--table=green_taxi_trips \
+--csv_path='landing/' \
+--csv_url='https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv' \
+--csv_name='taxi+_zone_lookup.csv'
+
+https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv
+
+python file_uploader.py \
+--user=root \
+--password=root \
+--host=localhost \
+--port=5432 \
+--db=ny_taxi \
+--table=zones \
+--csv_path='../landing/' \
+--csv_url='https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv' \
+--csv_name='taxi+_zone_lookup.csv'
+
+
+docker run -it \
+--network=pg-network \
+taxi_ingest:v001 \
+--user=root \
+--password=root \
+--host=pg-database \
+--port=5432 \
+--db=ny_taxi \
+--table=green_taxi_trips \
+--csv_path='landing/' \
+--csv_url='https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-03.csv.gz' \
+--csv_name='green_tripdata_2019-03.csv'
+
+
+docker run -it \
+--network=pg-network \
+taxi_ingest:v001 \
+--user=root \
+--password=root \
+--host=pg-database \
+--port=5432 \
+--db=ny_taxi \
+--table=green_taxi_trips \
+--csv_path='landing/' \
+--csv_url='https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-09.csv.gz' \
+--csv_name='green_tripdata_2019-09.csv'
+
+
+docker run -it \
+--network=pg-network \
+taxi_ingest:v001 \
+--user=root \
+--password=root \
+--host=pg-database \
+--port=5432 \
+--db=ny_taxi \
+--table=green_taxi_trips \
+--csv_path='landing/' \
+--csv_url='https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-09.csv.gz' \
+--csv_name='green_tripdata_2019-09.csv'
+
+
+docker run -it \
+--network=pg-network \
+taxi_ingest:v001 \
+--user=root \
+--password=root \
+--host=pg-database \
+--port=5432 \
+--db=ny_taxi \
+--table=green_taxi_trips \
+--csv_path='landing/' \
+--csv_url='https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-10.csv.gz' \
+--csv_name='green_tripdata_2019-10.csv'
+
+
+docker run -it \
+--network=docker_sql_pg-network \
+taxi_ingest:v001 \
+--user=root \
+--password=root \
+--host=pg-database \
+--port=5432 \
+--db=ny_taxi \
+--table=green_taxi_trips \
+--csv_path='landing/' \
+--csv_url='https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-11.csv.gz' \
+--csv_name='green_tripdata_2019-11.csv'
+
+
+docker run -it \
+--network=docker_sql_default \
+taxi_ingest:v001 \
+--user=root \
+--password=root \
+--host=pg-database \
+--port=5432 \
+--db=ny_taxi \
+--table=green_taxi_trips \
+--csv_path='landing/' \
+--csv_url='https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-12.csv.gz' \
+--csv_name='green_tripdata_2019-12.csv'
+
+
+docker run -it \
+--network=docker_sql_default \
+taxi_ingest:v001 \
+--user=root \
+--password=root \
+--host=pg-database \
+--port=5432 \
+--db=ny_taxi \
+--table=green_taxi_trips \
+--csv_path='landing/' \
+--csv_url='https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-05.csv.gz' \
+--csv_name='green_tripdata_2019-05.csv'
+
+
+Execute Ingest File
+1. 
+docker build -t taxi_ingest:v001 .
+2. 
+docker compose up -d
+3.
+docker network ls
+4.
+docker run -it \
+--network=docker_sql_default \
+taxi_ingest:v001 \
+--user=root \
+--password=root \
+--host=pg-database \
+--port=5432 \
+--db=ny_taxi \
+--table=green_taxi_trips \
+--csv_path='landing/' \
+--csv_url='https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-12.csv.gz' \
+--csv_name='green_tripdata_2019-12.csv'
+
+
+
+
+TERRAFORM
+terraform fmt
+export GOOGLE_CREDENTIALS='/workspaces/zoomcamp-2024-emi/workspace/terraform-demo/keys/my-creds.json'
+terraform init
+terraform plan
+terraform apply
+terraform destroy
+
+
+
+HOMEWORK
+
+2.- docker run -it --entrypoint=bash python:3.9
+
+3.- 
+SELECT 
+	count(*)
+FROM
+	green_taxi_trips
+WHERE
+	date(lpep_pickup_datetime) = '2019-09-18'
+AND
+	date(lpep_dropoff_datetime) = '2019-09-18';
+
+4.- 
+SELECT 
+	date(lpep_pickup_datetime)
+	, sum(trip_distance)
+FROM
+	green_taxi_trips
+WHERE
+	date(lpep_pickup_datetime) between '2019-09-01' and '2019-09-30'
+GROUP BY
+	date(lpep_pickup_datetime)
+ORDER BY
+	2 DESC
+LIMIT 
+	1;
+
+5.-
+SELECT
+    z."Borough"
+    , sum(t.total_amount)
+FROM
+    green_taxi_trips AS t
+JOIN
+    zones AS z
+ON
+    t."PULocationID" = z."LocationID"
+WHERE
+    date(lpep_pickup_datetime) =  '2019-09-18'
+GROUP BY
+    z."Borough"
+HAVING
+	sum(t.total_amount) >= 50000
+ORDER BY
+    2 DESC
+LIMIT
+    3;
+
+6.-
+SELECT
+pz."Zone" as pickup_zone
+, dz."Zone" as dropoff_zone
+, t.tip_amount
+FROM
+green_taxi_trips AS t
+JOIN
+zones AS pz
+ON
+t."PULocationID" = pz."LocationID"
+JOIN
+zones AS dz
+ON
+t."DOLocationID" = dz."LocationID"
+WHERE
+	pz."Zone" = 'Astoria'
+ORDER BY
+	t.tip_amount DESC
+LIMIT
+1;
+
+7.
+terraform apply
+
+Terraform used the selected providers to generate the following execution plan.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # google_bigquery_dataset.demo_dataset will be created
+  + resource "google_bigquery_dataset" "demo_dataset" {
+      + creation_time              = (known after apply)
+      + dataset_id                 = "demo_dataset"
+      + default_collation          = (known after apply)
+      + delete_contents_on_destroy = true
+      + effective_labels           = (known after apply)
+      + etag                       = (known after apply)
+      + id                         = (known after apply)
+      + is_case_insensitive        = (known after apply)
+      + last_modified_time         = (known after apply)
+      + location                   = "US"
+      + max_time_travel_hours      = (known after apply)
+      + project                    = "terraform-demo-emi"
+      + self_link                  = (known after apply)
+      + storage_billing_model      = (known after apply)
+      + terraform_labels           = (known after apply)
+    }
+
+  # google_storage_bucket.demo-bucket will be created
+  + resource "google_storage_bucket" "demo-bucket" {
+      + effective_labels            = (known after apply)
+      + force_destroy               = true
+      + id                          = (known after apply)
+      + location                    = "US"
+      + name                        = "terraform-demo-emi-tf-bucket"
+      + project                     = (known after apply)
+      + public_access_prevention    = (known after apply)
+      + rpo                         = (known after apply)
+      + self_link                   = (known after apply)
+      + storage_class               = "STANDARD"
+      + terraform_labels            = (known after apply)
+      + uniform_bucket_level_access = (known after apply)
+      + url                         = (known after apply)
+
+      + lifecycle_rule {
+          + action {
+              + type = "Delete"
+            }
+          + condition {
+              + age                   = 3
+              + matches_prefix        = []
+              + matches_storage_class = []
+              + matches_suffix        = []
+              + with_state            = (known after apply)
+            }
+        }
+      + lifecycle_rule {
+          + action {
+              + type = "AbortIncompleteMultipartUpload"
+            }
+          + condition {
+              + age                   = 1
+              + matches_prefix        = []
+              + matches_storage_class = []
+              + matches_suffix        = []
+              + with_state            = (known after apply)
+            }
+        }
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+google_bigquery_dataset.demo_dataset: Creating...
+google_storage_bucket.demo-bucket: Creating...
+google_bigquery_dataset.demo_dataset: Creation complete after 1s [id=projects/terraform-demo-emi/datasets/demo_dataset]
+google_storage_bucket.demo-bucket: Creation complete after 1s [id=terraform-demo-emi-tf-bucket]
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+
+
+
+
