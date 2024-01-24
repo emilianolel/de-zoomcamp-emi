@@ -1,4 +1,22 @@
-# Docker Containers Zoomcamp
+# Module 1: Docker Containers
+
+# Docker: A Brief Overview
+
+Docker is a platform designed to make it easier to create, deploy, and run applications using containers. Containers allow developers to package up an application with all parts it needs, such as libraries and dependencies, and ship it all out as one package. This ensures consistency across different environments, from development to production.
+
+## Key Features:
+
+- **Containerization:** Docker enables the creation and deployment of lightweight, portable containers, ensuring seamless application execution across various environments.
+
+- **Isolation:** Containers isolate applications and their dependencies, preventing conflicts and ensuring a clean and consistent runtime environment.
+
+- **Efficiency:** Docker optimizes resource utilization, as multiple containers can run on a single host without interference.
+
+- **Scalability:** Containers can be quickly scaled up or down based on demand, making Docker an ideal choice for scalable and dynamic applications.
+
+- **Docker Hub:** A centralized registry for Docker images, Docker Hub facilitates easy sharing and distribution of containerized applications.
+
+Whether you're a developer, system administrator, or DevOps professional, Docker simplifies the process of building, deploying, and managing applications, fostering a more efficient and collaborative development workflow.
 
 ## Docker Basics
 
