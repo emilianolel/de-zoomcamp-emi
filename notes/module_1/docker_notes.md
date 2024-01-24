@@ -1,6 +1,6 @@
 # Module 1: Docker Containers
 
-[Docker Logo](../../assets/module_1/notes/Docker_logo.png)
+![Docker Logo](../../assets/module_1/notes/Docker_logo.png "Docker Logo")
 
 ## Docker: A Brief Overview
 
