@@ -90,7 +90,7 @@ taxi_ingest:v001 \
 --csv_name='taxi+_zone_lookup.csv'
 ```
 
-## Execute Ingest File
+## Execute Ingest File Step by Step
 
 1. Build Docker Image 🛠️
 
@@ -133,22 +133,24 @@ taxi_ingest:v001 \
 --csv_name='green_tripdata_2019-02.csv'
 ```
 
-# Docker Commands
+## Command Glossary
+
+### Docker
 
 - `docker network create:` Creates a Docker network named pg-network.
 - `docker volume create:` Creates a local volume named dtc_postgres_volume_local.
 - `docker run:` Executes a Docker container with various configurations, including environment variables, volume mounting, and network setup.
 
-# Docker Compose Commands
+### Docker Compose
 
 - `docker-compose up -d:` Starts Docker Compose services in detached mode.
 - `docker-compose down:` Stops and removes Docker Compose services.
 
-# Docker Image Build and Run
+### Docker Image Build and Run
 
 - `docker build:` Builds a Docker image with the tag taxi_ingest:v001.
 - `docker run:` Runs a Docker container based on the specified image.
 
-# Additional Commands
+### Additional
 
 - `pgcli:` Connects to PostgreSQL using the pgcli tool.
