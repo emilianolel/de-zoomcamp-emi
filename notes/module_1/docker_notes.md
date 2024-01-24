@@ -135,20 +135,20 @@ taxi_ingest:v001 \
 
 # Docker Commands
 
-- **docker network create:** Creates a Docker network named pg-network.
-- **docker volume create:** Creates a local volume named dtc_postgres_volume_local.
-- **docker run:** Executes a Docker container with various configurations, including environment variables, volume mounting, and network setup.
+- `docker network create:` Creates a Docker network named pg-network.
+- `docker volume create:` Creates a local volume named dtc_postgres_volume_local.
+- `docker run:` Executes a Docker container with various configurations, including environment variables, volume mounting, and network setup.
 
 # Docker Compose Commands
 
-- **docker-compose up -d:** Starts Docker Compose services in detached mode.
-- **docker-compose down:** Stops and removes Docker Compose services.
+- `docker-compose up -d:` Starts Docker Compose services in detached mode.
+- `docker-compose down:` Stops and removes Docker Compose services.
 
 # Docker Image Build and Run
 
-- **docker build:** Builds a Docker image with the tag taxi_ingest:v001.
-- **docker run:** Runs a Docker container based on the specified image.
+- `docker build:` Builds a Docker image with the tag taxi_ingest:v001.
+- `docker run:` Runs a Docker container based on the specified image.
 
 # Additional Commands
 
-- **pgcli:** Connects to PostgreSQL using the pgcli tool.
+- `pgcli:` Connects to PostgreSQL using the pgcli tool.
