@@ -1,5 +1,7 @@
 # Module 1: Docker Containers
 
+[Docker Logo]("../../assets/module_1/notes/Docker_(container_engine)_logo.png" doker logo)
+
 ## Docker: A Brief Overview
 
 Docker is a platform designed to make it easier to create, deploy, and run applications using containers. Containers allow developers to package up an application with all parts it needs, such as libraries and dependencies, and ship it all out as one package. This ensures consistency across different environments, from development to production.
