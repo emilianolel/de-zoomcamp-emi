@@ -33,3 +33,12 @@ Terraform promotes the concept of immutable infrastructure, creating new resourc
 
 Terraform simplifies infrastructure management, provides version control for infrastructure code, and enhances collaboration among development and operations teams. It is widely used for building scalable and reproducible infrastructure in cloud and hybrid cloud environments.
 
+## Additional Information
+
+It is important to obtain the .json credentials file in order to create resources on the desired cloud provider. This allows Terraform to leverage the services mentioned in the main.tf file.
+
+``` bash
+# Example for Google Cloud Platform
+
+export GOOGLE_CREDENTIALS='path/to/json/credentials/file'
+```
