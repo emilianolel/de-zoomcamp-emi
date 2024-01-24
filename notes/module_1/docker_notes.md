@@ -1,10 +1,10 @@
 # Module 1: Docker Containers
 
-# Docker: A Brief Overview
+## Docker: A Brief Overview
 
 Docker is a platform designed to make it easier to create, deploy, and run applications using containers. Containers allow developers to package up an application with all parts it needs, such as libraries and dependencies, and ship it all out as one package. This ensures consistency across different environments, from development to production.
 
-## Key Features:
+### Key Features:
 
 - **Containerization:** Docker enables the creation and deployment of lightweight, portable containers, ensuring seamless application execution across various environments.
 
