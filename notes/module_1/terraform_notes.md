@@ -1,5 +1,7 @@
 # Module 1: Terraform, Infrastructure as Code (IaC)
 
+![Terraform Logo](../../assets/module_1/notes/Terraform_Logo.svg "Terraform Logo")
+
 Terraform is an open-source Infrastructure as Code (IaC) tool developed by HashiCorp. It simplifies the process of provisioning and managing infrastructure by allowing users to define infrastructure resources in a declarative configuration language.
 
 ## Key Concepts:
@@ -35,7 +37,7 @@ Terraform simplifies infrastructure management, provides version control for inf
 
 ## Additional Information
 
-It is important to obtain the .json credentials file in order to create resources on the desired cloud provider. This allows Terraform to leverage the services mentioned in the main.tf file.
+It is important to obtain the `.json` credentials file in order to create resources on the desired cloud provider. This allows Terraform to leverage the services mentioned in the main.tf file.
 
 ``` bash
 # Example for Google Cloud Platform
