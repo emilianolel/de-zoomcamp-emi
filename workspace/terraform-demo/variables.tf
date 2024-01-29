@@ -26,5 +26,5 @@ variable "gcs_storage_class" {
 
 variable "gcs_bucket_name" {
   description = "My Storage Bucket Name"
-  default = "terraform-demo-emi-tf-bucket"
+  default = "mage-emi-bucket"
 }

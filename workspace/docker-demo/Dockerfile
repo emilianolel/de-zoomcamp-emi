@@ -10,4 +10,4 @@ RUN mkdir /app/landing/
 
 COPY file_uploader.py file_uploader.py
 
-ENTRYPOINT [ "python", "file_uploader.py" ]
+ENTRYPOINT [ "bash", "file_uploader.py" ]
