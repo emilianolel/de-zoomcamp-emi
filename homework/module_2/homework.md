@@ -12,7 +12,7 @@ The goal will be to construct an ETL pipeline that loads the data, performs some
 
 - Create a new pipeline, call it `green_taxi_etl`
 
-
+![green taxi etl](../../assets/module_2/01_create_new_pipeline.png)
 
 - Add a data loader block and use Pandas to read data for the final quarter of 2020 (months `10`, `11`, `12`).
   - You can use the same datatypes and date parsing methods shown in the course.
@@ -224,7 +224,7 @@ def export_data(data, *args, **kwargs):
 
 - Schedule your pipeline to run daily at 5AM UTC.
 
-
+![scheduled pipeline](../../assets/module_2/02_green_taxi_trigger.png)
 
 ### Questions
 
