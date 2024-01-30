@@ -66,9 +66,6 @@ def load_data_from_api(*args, **kwargs):
         print('Downloading file: ', url)
         data.append(pd.read_csv(url, sep=',', compression='gzip', dtype=taxi_dtypes, parse_dates=parse_dates))
     
-    for df in data:
-        print(len(df))
-
     return pd.concat(data)
 
 
