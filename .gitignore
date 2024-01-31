@@ -7,3 +7,5 @@ workspace/terraform-demo/.secrets/
 workspace/terraform-demo/terraform.*
 
 workspace/terraform-demo/.terraform*
+
+lab/
