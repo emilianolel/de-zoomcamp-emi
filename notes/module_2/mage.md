@@ -29,4 +29,8 @@ Together, these features and concepts make Mage a powerful and comprehensive too
 
 ## Defining the pipeline
 
-This pipeline is going to extract the [`yellow_taxi`](https://github.com/DataTalksClub/nyc-tlc-data/releases/tag/yellow)
+This pipeline is going to extract the [`yellow_taxi`](https://github.com/DataTalksClub/nyc-tlc-data/releases/tag/yellow) data, and then insert it into a `Postgres` database.
+
+Here I show you the simple data pipeline graph.
+
+![Simple data pipeline Mage](../../assets/module_2/notes/pipeline_graph_view.png)
