@@ -26,3 +26,7 @@ Mage operates on a set of fundamental concepts, each contributing to its functio
 
 Together, these features and concepts make Mage a powerful and comprehensive tool for anyone involved in data transformation and integration, combining ease of use with robust functionality. 🛠️
 
+
+## Defining the pipeline
+
+This pipeline is going to extract the [`yellow_taxi`](https://github.com/DataTalksClub/nyc-tlc-data/releases/tag/yellow)
