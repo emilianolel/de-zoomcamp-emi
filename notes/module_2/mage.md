@@ -111,7 +111,7 @@ def test_output(output, *args) -> None:
 
 ### TRANSFORMER
 
-```pyhton
+```python
 import pandas as pd
 
 if 'transformer' not in globals():
