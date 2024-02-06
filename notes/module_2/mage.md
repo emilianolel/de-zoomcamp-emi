@@ -1,5 +1,7 @@
 # Mage 
 
+![Mage Logo](../../assets/module_2/notes/mage_logo.svg)
+
 Mage, an open-source 🌐 and hybrid framework, transforms and integrates data seamlessly, marrying the flexibility of notebooks with the structured nature of modular code.
 
 - **Data Extraction and Synchronization:** Mage facilitates the seamless extraction and synchronization of data from various third-party sources, ensuring a smooth flow of information. 🔄
