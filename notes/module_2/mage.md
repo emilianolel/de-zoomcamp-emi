@@ -28,6 +28,8 @@ Mage operates on a set of fundamental concepts, each contributing to its functio
 
 Together, these features and concepts make Mage a powerful and comprehensive tool for anyone involved in data transformation and integration, combining ease of use with robust functionality. 🛠️
 
+![Mage Structure](../../assets/module_2/notes/diagrama_mage.drawio.png)
+
 
 ## Defining the pipeline
 
