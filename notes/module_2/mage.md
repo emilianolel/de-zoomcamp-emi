@@ -49,6 +49,21 @@ if 'test' not in globals():
     from mage_ai.data_preparation.decorators import test
 
 
+"""
+In order to minimize the use of memory I decided to read the csv in chunks of 100000 rows.
+
+Function:
+pd.read_csv
+
+Parameters:
+- iterator (bool, optional): Whether to return an iterator. If True, returns an iterator for reading the file in chunks. Default is False.
+- chunksize (int, optional): The number of rows to include in each chunk when iterating. Default is 100000.
+
+Returns:
+- DataFrame or TextParser: If iterator is False, returns a DataFrame containing the entire CSV data. If iterator is True, returns a TextParser object for iterating over chunks of the CSV file.
+"""
+
+
 @data_loader
 def load_data_from_api(*args, **kwargs):
     """
