@@ -16,6 +16,9 @@ FROM
     `dez-workspace-emi.nytaxi.external_green_tripdata`;
 ```
 
+**Output**
+![question 1](../../assets/module_3/homework/1.png)
+
 ---
 
 ### Question 2️⃣
