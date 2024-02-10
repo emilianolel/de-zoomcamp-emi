@@ -147,7 +147,7 @@ Where is the data stored in the External Table you created?
 It is best practice in Big Query to always cluster your data:
 
 **Answer:**
-[Your answer here]
+`True`
 
 ---
 
