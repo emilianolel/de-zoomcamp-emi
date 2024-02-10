@@ -135,7 +135,11 @@ WHERE
 Where is the data stored in the External Table you created?
 
 **Answer:**
-[Your answer here]
+`GCP Bucket`
+
+**Image**
+![question 6a](../../assets/module_3/homework/6a.png)
+![question 6b](../../assets/module_3/homework/6b.png)
 
 ---
 
