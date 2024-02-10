@@ -34,13 +34,13 @@ What is the estimated amount of data that will be read when this query is execut
 SELECT 
     count(distinct pulocation_id) as dis_mat 
 FROM 
-    dez-workspace-emi.nytaxi.green_tripdata_non_partitoned;
+    `dez-workspace-emi.nytaxi.green_tripdata_non_partitoned`;
 
 -- EXTERNAL
 SELECT 
     count(distinct pulocation_id) as dis_mat 
 FROM 
-    dez-workspace-emi.nytaxi.external_green_tripdata;
+    `dez-workspace-emi.nytaxi.external_green_tripdata`;
 ```
 
 **Output**
