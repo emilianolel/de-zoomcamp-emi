@@ -46,16 +46,26 @@ FROM
 **Output**
 ![question 2](../../assets/module_3/homework/2.png)
 
-
-
-
---
+---
 
 ### Question 3️⃣
-How many records have a fare_amount of 0?
+How many records have a `fare_amount` of `0`?
 
 **Answer:**
-[Your answer here]
+`1,622`
+
+``` sql
+SELECT 
+    count(*) 
+FROM 
+    `dez-workspace-emi.nytaxi.external_green_tripdata` 
+WHERE 
+    fare_amount = 0;
+```
+
+**Output**
+![question 3](../../assets/module_3/homework/3.png)
+
 
 ---
 
