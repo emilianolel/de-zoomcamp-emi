@@ -6,7 +6,7 @@
 What is count of records for the 2022 Green Taxi Data??
 
 **Answer:**
-[Your answer here]
+`840,402`
 
 **Query**
 ``` sql
