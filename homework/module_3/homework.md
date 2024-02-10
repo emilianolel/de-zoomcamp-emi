@@ -26,9 +26,30 @@ Write a query to count the distinct number of PULocationIDs for the entire datas
 What is the estimated amount of data that will be read when this query is executed on the External Table and the Table?
 
 **Answer:**
-[Your answer here]
+`0 MB for the External Table and 6.41MB for the Materialized Table`
 
----
+**Queries** 
+``` sql 
+-- MATERIALIZED
+SELECT 
+    count(distinct pulocation_id) as dis_mat 
+FROM 
+    dez-workspace-emi.nytaxi.green_tripdata_non_partitoned;
+
+-- EXTERNAL
+SELECT 
+    count(distinct pulocation_id) as dis_mat 
+FROM 
+    dez-workspace-emi.nytaxi.external_green_tripdata;
+```
+
+**Output**
+![question 2](../../assets/module_3/homework/2.png)
+
+
+
+
+--
 
 ### Question 3️⃣
 How many records have a fare_amount of 0?
