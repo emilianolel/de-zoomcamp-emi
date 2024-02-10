@@ -174,6 +174,7 @@ Write a `SELECT count(*)` query FROM the materialized table you created. How man
 
 ---
 
+## Queries
 
 ``` sql
 -- HOMEWORK WEEK 3
