@@ -155,7 +155,11 @@ It is best practice in Big Query to always cluster your data:
 Write a `SELECT count(*)` query FROM the materialized table you created. How many bytes does it estimate will be read? Why?
 
 **Answer:**
-[Your answer here]
+`0B. Because it is already stored in the metadata`
+
+**Image**
+![question 8](../../assets/module_3/homework/8.png)
+
 
 ---
 
