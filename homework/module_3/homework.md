@@ -31,12 +31,14 @@ What is the estimated amount of data that will be read when this query is execut
 **Queries** 
 ``` sql 
 -- MATERIALIZED
+
 SELECT 
     count(distinct pulocation_id) as dis_mat 
 FROM 
     `dez-workspace-emi.nytaxi.green_tripdata_non_partitoned`;
 
 -- EXTERNAL
+
 SELECT 
     count(distinct pulocation_id) as dis_mat 
 FROM 
@@ -73,7 +75,25 @@ WHERE
 What is the best strategy to make an optimized table in Big Query if your query will always order the results by PUlocationID and filter based on lpep_pickup_datetime? (Create a new table with this strategy)
 
 **Answer:**
-[Your answer here]
+`Partition by lpep_pickup_datetime Cluster on PUlocationID`
+
+**Query**
+``` sql
+CREATE OR REPLACE TABLE 
+    `dez-workspace-emi.nytaxi.green_tripdata_partitoned_clustered_hw`
+PARTITION BY 
+    DATE(lpep_pickup_datetime)
+CLUSTER BY 
+    pulocation_id AS
+SELECT 
+    * 
+FROM 
+    `dez-workspace-emi.nytaxi.external_green_tripdata`;
+```
+
+**Output**
+![question 4](../../assets/module_3/homework/4.png)
+
 
 ---
 
