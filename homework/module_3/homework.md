@@ -1,3 +1,85 @@
+# Data Engineering Zoomcamp 2024 Module 3 Homework  📝
+
+---
+
+### Question 1️⃣
+**Question:** 
+What is count of records for the 2022 Green Taxi Data??
+
+**Answer:**
+[Your answer here]
+
+---
+
+### Question 2️⃣
+**Question:** 
+Write a query to count the distinct number of PULocationIDs for the entire dataset on both the tables.
+What is the estimated amount of data that will be read when this query is executed on the External Table and the Table?
+
+**Answer:**
+[Your answer here]
+
+---
+
+### Question 3️⃣
+**Question:** 
+How many records have a fare_amount of 0?
+
+**Answer:**
+[Your answer here]
+
+---
+
+### Question 4️⃣
+**Question:** 
+What is the best strategy to make an optimized table in Big Query if your query will always order the results by PUlocationID and filter based on lpep_pickup_datetime? (Create a new table with this strategy)
+
+**Answer:**
+[Your answer here]
+
+---
+
+### Question 5️⃣
+**Question:** 
+Write a query to retrieve the distinct PULocationID between lpep_pickup_datetime 06/01/2022 and 06/30/2022 (inclusive)
+
+Use the materialized table you created earlier in your from clause and note the estimated bytes. Now change the table in the from clause to the partitioned table you created for question 4 and note the estimated bytes processed. What are these values?
+
+Choose the answer which most closely matches.
+
+**Answer:**
+[Your answer here]
+
+---
+
+### Question 6️⃣
+**Question:** 
+Where is the data stored in the External Table you created?
+
+**Answer:**
+[Your answer here]
+
+---
+
+### Question 7️⃣
+**Question:** 
+It is best practice in Big Query to always cluster your data:
+
+**Answer:**
+[Your answer here]
+
+---
+
+### Question 8️⃣
+**Question:** 
+Write a `SELECT count(*)` query FROM the materialized table you created. How many bytes does it estimate will be read? Why?
+
+**Answer:**
+[Your answer here]
+
+---
+
+
 ``` sql
 -- HOMEWORK WEEK 3
 
