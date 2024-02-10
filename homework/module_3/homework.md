@@ -105,7 +105,29 @@ Use the materialized table you created earlier in your from clause and note the 
 Choose the answer which most closely matches.
 
 **Answer:**
-[Your answer here]
+`12.82 MB for non-partitioned table and 1.12 MB for the partitioned table`
+
+**Query**
+``` sql
+SELECT 
+    count(distinct pulocation_id) as dis_mat
+FROM
+    `dez-workspace-emi.nytaxi.green_tripdata_non_partitoned`
+WHERE 
+    DATE(lpep_pickup_datetime) BETWEEN '2022-06-01' AND '2022-06-30';
+
+SELECT 
+    count(distinct pulocation_id) as dis_mat
+FROM 
+    dez-workspace-emi.nytaxi.green_tripdata_partitoned_clustered_hw
+WHERE 
+    DATE(lpep_pickup_datetime) BETWEEN '2022-06-01' AND '2022-06-30';
+```
+
+**Output**
+![question 5a](../../assets/module_3/homework/5a.png)
+![question 5b](../../assets/module_3/homework/5b.png)
+
 
 ---
 
