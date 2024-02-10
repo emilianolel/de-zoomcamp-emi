@@ -1,5 +1,16 @@
 # Data Engineering Zoomcamp 2024 Module 3 Homework  📝
 
+
+## Previous Steps
+
+Load data in gcp bucket from https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page.
+
+
+![mage pipeline](../../assets/module_3/homework/mage_pipeline.png.png)
+
+
+## Homework
+
 ---
 
 ### Question 1️⃣
