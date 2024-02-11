@@ -1,14 +1,17 @@
 # Data Engineering Zoomcamp 2024 Module 3 Homework  📝
 
-
 ## Previous Steps
 
-Load data in gcp bucket from https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page.
+First we need to load the `green taxi` data inside a GCP Storage `bucket`.
+
+https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+
+**Architecture Diagram**
 
 ![architecture diagram](../../assets/module_3/homework/arquitechture_w3.svg)
 
+**Mage Pipeline**
 ![mage pipeline](../../assets/module_3/homework/mage_pipeline.png)
-
 
 ## Homework
 
@@ -80,7 +83,6 @@ WHERE
 **Output**
 ![question 3](../../assets/module_3/homework/3.png)
 
-
 ---
 
 ### Question 4️⃣
@@ -105,7 +107,6 @@ FROM
 
 **Output**
 ![question 4](../../assets/module_3/homework/4.png)
-
 
 ---
 
