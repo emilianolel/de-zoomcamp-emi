@@ -54,7 +54,9 @@ A data warehouse is a centralized repository that stores structured, historical 
    - Data consistency: Data warehouses enforce consistent naming conventions, definitions, and formats, ensuring that users can trust the accuracy and reliability of the data.
    - Scalability: Data warehouses are designed to handle large volumes of data and support complex analytical queries, making them suitable for organizations of all sizes. 📈
 
-## Bigquery
+## BigQuery
+
+![google BigQuery](../../assets/module_3/notes/bigquery.jpeg)
 
 **BigQuery** is a fully managed, serverless cloud data warehouse provided by Google Cloud Platform. It's designed for scalable and cost-effective analysis of big data sets in real-time using SQL queries. Here's an overview:
 
