@@ -81,3 +81,26 @@ A data warehouse is a centralized repository that stores structured, historical 
    - **Simplicity**: BigQuery's serverless architecture eliminates the need for infrastructure management, making it easy to use for both technical and non-technical users. 🤹
    - **Cost-effectiveness**: Users only pay for the resources they use, with no upfront costs or long-term commitments, making it a cost-effective solution for big data analytics. 💰
 
+## Partitioning and Clustering
+
+Partitioning and clustering are techniques used to improve the performance and efficiency of data storage and query processing in databases, including BigQuery. 🛠️
+
+**Partitioning**:
+Partitioning involves dividing a large table into smaller, more manageable chunks called partitions based on a specified column or criterion. Each partition typically contains a subset of the data, making it easier to manage and query large datasets. Here are some key points about partitioning:
+
+- **Purpose**: Partitioning helps improve query performance by allowing the database to access only the relevant partitions when executing queries, rather than scanning the entire table. 🚀
+- **Criteria**: Tables can be partitioned based on various criteria such as range (e.g., by date or timestamp), list (e.g., by category or region), or hash (e.g., by a hash of the partitioning column). 📊
+- **Benefits**: Partitioning can lead to faster query execution times, reduced storage costs, and improved data management and maintenance. 💰
+- **Example**: In BigQuery, partitioned tables are divided into segments based on the partitioning column, enabling more efficient querying and storage management for large datasets. 🗄️
+
+**Clustering**:
+Clustering is a technique used in conjunction with partitioning to further organize data within each partition. It involves physically sorting and storing the data in each partition based on one or more clustering columns. Here are some key points about clustering:
+
+- **Purpose**: Clustering helps improve query performance by arranging related data together within each partition, reducing the amount of data that needs to be scanned during query execution. 🔍
+- **Criteria**: Clustering columns are chosen based on the typical access patterns and query requirements. Queries that filter, join, or group by the clustering columns benefit from improved performance. 🎯
+- **Benefits**: Clustering can lead to further reduction in query execution times, as well as improved data compression and storage efficiency. 💡
+- **Example**: In BigQuery, clustering is achieved by specifying clustering columns when creating or altering a table. The data within each partition is then sorted and stored based on the values of the clustering columns. 🏷️
+
+The following image shows how Partitioning and Clustering works.
+
+![partitioning and clustering](../../assets/module_3/notes/clustering-and-partitioning-tables.png)
