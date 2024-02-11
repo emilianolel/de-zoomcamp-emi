@@ -122,12 +122,16 @@ OPTIONS (
 ---
 
 1. **Create a non-partitioned table from an external table**:
+   - This code creates a new table named `green_tripdata_non_partitoned` in the dataset `dez-workspace-emi.nytaxi` by copying all data from an external table named `external_green_tripdata`. The new table is not partitioned.
+
 ```sql
 CREATE OR REPLACE TABLE dez-workspace-emi.nytaxi.green_tripdata_non_partitoned AS
 SELECT * FROM dez-workspace-emi.nytaxi.external_green_tripdata;
 ```
 
 2. **Create a partitioned table from an external table**:
+   - This code creates a new table named `green_tripdata_partitoned` in the dataset `dez-workspace-emi.nytaxi`. The data in this table is partitioned by the date of pickup (`lpep_pickup_datetime` column). The data is copied from an external table named `external_green_tripdata`.
+
 ```sql
 CREATE OR REPLACE TABLE dez-workspace-emi.nytaxi.green_tripdata_partitoned
 PARTITION BY
@@ -136,6 +140,8 @@ SELECT * FROM dez-workspace-emi.nytaxi.external_green_tripdata;
 ```
 
 3. **Impact of partition**:
+   - Two SQL queries are executed to demonstrate the impact of partitioning on query performance. The first query scans data from the non-partitioned table, while the second query scans data from the partitioned table for a specific date range.
+
 ```sql
 -- Scanning 25.65MB of data
 SELECT DISTINCT(vendor_id)
@@ -149,6 +155,8 @@ WHERE DATE(lpep_pickup_datetime) BETWEEN '2022-06-01' AND '2022-06-30';
 ```
 
 4. **Let's look into the partitions**:
+   - This code retrieves information about the partitions in the `green_tripdata_partitoned` table. It returns the table name, partition ID, and total number of rows in each partition, ordered by the number of rows in descending order.
+
 ```sql
 SELECT table_name, partition_id, total_rows
 FROM `nytaxi.INFORMATION_SCHEMA.PARTITIONS`
@@ -157,6 +165,8 @@ ORDER BY total_rows DESC;
 ```
 
 5. **Creating a partition and clustered table**:
+   - This code creates a new table named `green_tripdata_partitoned_clustered` in the dataset `dez-workspace-emi.nytaxi`. The data in this table is both partitioned by the date of pickup and clustered by the vendor ID. The data is copied from an external table named `external_green_tripdata`.
+
 ```sql
 CREATE OR REPLACE TABLE dez-workspace-emi.nytaxi.green_tripdata_partitoned_clustered
 PARTITION BY DATE(lpep_pickup_datetime)
@@ -165,6 +175,8 @@ SELECT * FROM dez-workspace-emi.nytaxi.external_green_tripdata;
 ```
 
 6. **Query scans for non-clustered partitioned table**:
+   - This code executes a query to count the number of trips from the `green_tripdata_partitoned` table for a specific date range (`'2022-06-01'` to `'2020-12-31'`) and for a specific vendor (`vendor_id=1`). It demonstrates the data scanning volume for a non-clustered partitioned table.
+
 ```sql
 -- Query scans 1.1 GB
 SELECT count(*) as trips
@@ -174,6 +186,7 @@ WHERE DATE(lpep_pickup_datetime) BETWEEN '2022-06-01' AND '2020-12-31'
 ```
 
 7. **Query scans for clustered partitioned table**:
+   - This code executes a similar query to the previous one but counts the number of trips from the `green_tripdata_partitoned_clustered` table, which is both partitioned and clustered. It compares the data scanning volume with the previous query to demonstrate the impact of clustering on query performance.
 ```sql
 -- Query scans 864.5 MB
 SELECT count(*) as trips
