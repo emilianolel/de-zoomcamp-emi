@@ -5,6 +5,7 @@
 
 Load data in gcp bucket from https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page.
 
+![architecture diagram](../../assets/module_3/homework/arquitechture_w3.svg)
 
 ![mage pipeline](../../assets/module_3/homework/mage_pipeline.png)
 
