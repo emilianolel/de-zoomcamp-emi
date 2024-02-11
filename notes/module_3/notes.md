@@ -4,6 +4,8 @@
 
 ## What is OLTP and OLAP?
 
+![olap and oltp](../../assets/module_3/notes/olap_oltp.webp)
+
 OLAP (Online Analytical Processing) and OLTP (Online Transactional Processing) are two different types of database systems, each optimized for distinct purposes.
 
 1. **OLTP (Online Transactional Processing)**:
