@@ -24,7 +24,7 @@ OLAP (Online Analytical Processing) and OLTP (Online Transactional Processing) a
 
 In summary, OLTP systems prioritize efficient transaction processing for day-to-day operations, while OLAP systems are tailored for analytical processing and decision support, enabling users to gain insights from large volumes of historical data. 🔄🧠
 
-|                    | OLTP                                                       | OLAP                                                                |
+|                    | OLTP 💼                                                    | OLAP 🔍                                                              |
 | ------------------ | ---------------------------------------------------------- | ------------------------------------------------------------------- |
 | Purpose            | Control and run essential business operations in real time | Plan, solve problems, support decisions, discover hidden insights   |
 | Data updates       | Short, fast updates initiated by user                      | Data periodically refreshed with scheduled, long-running batch jobs |
