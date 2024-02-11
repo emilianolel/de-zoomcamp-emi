@@ -7,7 +7,7 @@
 OLAP (Online Analytical Processing) and OLTP (Online Transactional Processing) are two different types of database systems, each optimized for distinct purposes.
 
 1. **OLTP (Online Transactional Processing)**:
-   - **Purpose**: OLTP systems are designed for managing transaction-oriented applications, where the emphasis is on processing a large number of short, online transactions (e.g., INSERT, UPDATE, DELETE).
+   - **Purpose**: OLTP systems are designed for managing transaction-oriented applications, where the emphasis is on processing a large number of short, online transactions (e.g., `INSERT`, `UPDATE`, `DELETE`).
    - **Characteristics**:
      - **High Volume**: Handles a large number of concurrent transactions. 📈
      - **Low Latency**: Prioritizes quick response times for individual transactions. ⏱️
