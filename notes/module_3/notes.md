@@ -106,3 +106,79 @@ Clustering is a technique used in conjunction with partitioning to further organ
 The following image shows how Partitioning and Clustering works.
 
 ![partitioning and clustering](../../assets/module_3/notes/clustering-and-partitioning-tables.png)
+
+## Code
+
+---
+Create external table from parquet file(s) inside GCS Bucket.
+
+```sql
+CREATE OR REPLACE EXTERNAL TABLE `dez-workspace-emi.nytaxi.external_green_tripdata`
+OPTIONS (
+  format = 'parquet',
+  uris = ['gs://lab_landing_bucket/green_taxi_pq/*.parquet']
+);
+```
+---
+
+1. **Create a non-partitioned table from an external table**:
+```sql
+CREATE OR REPLACE TABLE dez-workspace-emi.nytaxi.green_tripdata_non_partitoned AS
+SELECT * FROM dez-workspace-emi.nytaxi.external_green_tripdata;
+```
+
+2. **Create a partitioned table from an external table**:
+```sql
+CREATE OR REPLACE TABLE dez-workspace-emi.nytaxi.green_tripdata_partitoned
+PARTITION BY
+  DATE(lpep_pickup_datetime) AS
+SELECT * FROM dez-workspace-emi.nytaxi.external_green_tripdata;
+```
+
+3. **Impact of partition**:
+```sql
+-- Scanning 25.65MB of data
+SELECT DISTINCT(vendor_id)
+FROM dez-workspace-emi.nytaxi.green_tripdata_non_partitoned
+WHERE DATE(lpep_pickup_datetime) BETWEEN '2022-06-01' AND '2022-06-30';
+
+-- Scanning ~2.25 MB of DATA
+SELECT DISTINCT(vendor_id)
+FROM dez-workspace-emi.nytaxi.green_tripdata_partitoned
+WHERE DATE(lpep_pickup_datetime) BETWEEN '2022-06-01' AND '2022-06-30';
+```
+
+4. **Let's look into the partitions**:
+```sql
+SELECT table_name, partition_id, total_rows
+FROM `nytaxi.INFORMATION_SCHEMA.PARTITIONS`
+WHERE table_name = 'green_tripdata_partitoned'
+ORDER BY total_rows DESC;
+```
+
+5. **Creating a partition and clustered table**:
+```sql
+CREATE OR REPLACE TABLE dez-workspace-emi.nytaxi.green_tripdata_partitoned_clustered
+PARTITION BY DATE(lpep_pickup_datetime)
+CLUSTER BY vendor_id AS
+SELECT * FROM dez-workspace-emi.nytaxi.external_green_tripdata;
+```
+
+6. **Query scans for non-clustered partitioned table**:
+```sql
+-- Query scans 1.1 GB
+SELECT count(*) as trips
+FROM dez-workspace-emi.nytaxi.green_tripdata_partitoned
+WHERE DATE(lpep_pickup_datetime) BETWEEN '2022-06-01' AND '2020-12-31'
+  AND vendor_id=1;
+```
+
+7. **Query scans for clustered partitioned table**:
+```sql
+-- Query scans 864.5 MB
+SELECT count(*) as trips
+FROM dez-workspace-emi.nytaxi.green_tripdata_partitoned_clustered
+WHERE DATE(lpep_pickup_datetime) BETWEEN '2022-06-01' AND '2020-12-31';
+```
+
+
