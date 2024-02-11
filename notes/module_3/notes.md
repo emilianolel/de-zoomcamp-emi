@@ -2,6 +2,8 @@
 
 ## Summary
 
+OLAP and OLTP serve distinct database needs: OLTP ensures swift transaction processing, while OLAP supports complex analytical queries for decision-making. Data warehouses, like BigQuery, consolidate historical data for reporting and analysis. BigQuery, a Google Cloud offering, excels in scalable, cost-effective analysis. Techniques like partitioning and clustering optimize data storage and access efficiency. 🛢️🔍🏢
+
 ## What is OLTP and OLAP?
 
 ![olap and oltp](../../assets/module_3/notes/olap_oltp.webp)
