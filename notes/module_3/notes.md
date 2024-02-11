@@ -37,7 +37,9 @@ In summary, OLTP systems prioritize efficient transaction processing for day-to-
 | Data view           | Lists day-to-day business transactions                                                            | Multi-dimensional view of enterprise data                                         |
 | User examples       | Customer-facing personnel, clerks, online shoppers                                                | Knowledge workers such as data analysts, business analysts, and executives        |
 
-## What is a Datawarehouse? 🏢
+## What is a Data Warehouse? 🏢
+
+![data warehouse](../../assets/module_3/notes/data-warehouse.png)
 
 A data warehouse is a centralized repository that stores structured, historical data from one or more sources. It's designed to facilitate reporting, analysis, and data mining (OLAP solution).
 
